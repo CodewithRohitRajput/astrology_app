@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-image: url('https://source.unsplash.com/1600x900/?galaxy,stars');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .rotating-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/images/new_circle.png') no-repeat center;
+            background-size: contain;
+            opacity: 0.3;
+            animation: rotateClockwise 60s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes rotateClockwise {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .container {
+            background: rgba(75, 85, 99, 0.8); /* Indigo-like background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ffcc00;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .content-box {
+            background-color: rgba(31, 41, 55, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .content-box p {
+            font-size: 1.2rem;
+        }
+
+        .content-box span {
+            font-weight: bold;
+            color: #ffcc00;
+        }
+
+        .btn {
+            background: #ffcc00;
+            color: black;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 5px;
+            text-align: center;
+            display: inline-block;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #ffd700;
+        }
+    </style>
+</head>
+<body class="font-sans text-white">
+
+    <div class="rotating-bg"></div>
+
+    <div class="flex justify-center items-center min-h-screen ">
+        <div class="container max-w-4xl w-full">
+
+            <h1 class="title">Appointment Details</h1>
+
+            <div class="space-y-6">
+                <div class="content-box">
+                    <p><span class="text-yellow-400">Full Name:</span> <%= user.fullName %></p>
+                </div>
+
+                <div class="content-box">
+                    <p><span class="text-yellow-400">Email:</span> <%= user.email %></p>
+                </div>
+
+                <div class="content-box">
+                    <p><span class="text-yellow-400">Phone Number:</span> <%= user.phoneNumber %></p>
+                </div>
+
+                <div class="content-box">
+                    <p><span class="text-yellow-400">Gender:</span> <%= user.gender %></p>
+                </div>
+
+                <div class="content-box">
+                    <p><span class="text-yellow-400">Place of Birth:</span> <%= user.placeOfBirth %></p>
+                </div>
+
+                <div class="content-box">
+                    <p><span class="text-yellow-400">Date of Birth:</span> <%= user.dateOfBirth %></p>
+                </div>
+
+                <div class="content-box">
+                    <p><span class="text-yellow-400">Time of Birth:</span> <%= user.timeOfBirth %></p>
+                </div>
+
+                <div class="content-box">
+                    <p><span class="text-yellow-400">Country:</span> <%= user.country %></p>
+                </div>
+
+                <div class="content-box">
+                    <p><span class="text-yellow-400">Preferred Language:</span> <%= user.preferredLanguage %></p>
+                </div>
+
+                <div class="content-box">
+                    <p><span class="text-yellow-400">Preferred Date:</span> <%= user.preferredDate %></p>
+                </div>
+
+                <div class="content-box">
+                    <p><span class="text-yellow-400">Time Slot:</span> <%= user.timeSlot %></p>
+                </div>
+
+                <div class="content-box">
+                    <p><span class="text-yellow-400">Additional Notes:</span> <%= user.additionalNotes %></p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="/" class="btn">Go Back to Homepage</a>
+            </div>
+            
+        </div>
+    </div>
+
+</body>
+</html>

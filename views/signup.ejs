@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Astrology</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-image: url('/images/bg_astro2.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+        .rotating-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/images/new_circle.png') no-repeat center;
+            background-size: contain;
+            opacity: 0.3;
+            animation: rotateClockwise 60s linear infinite;
+            z-index: -1;
+        }
+        @keyframes rotateClockwise {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-r from-purple-900 via-indigo-800 to-blue-900 min-h-screen flex flex-col">
+    <div class="rotating-bg"></div>
+    <nav class="bg-purple-800 bg-opacity-90 text-white shadow-lg w-full p-4 fixed top-0 left-0 z-10 flex justify-between items-center">
+        <a href="/" class="text-lg font-bold text-yellow-300">Go Back to Home</a>
+    </nav>
+    <div class="flex-grow flex items-center justify-center mt-16">
+        <div class="bg-white bg-opacity-10 backdrop-blur-lg p-8 rounded-lg shadow-lg w-full max-w-md">
+            <h2 class="text-2xl font-bold text-center text-yellow-400 mb-6">Create Your Astrology Account</h2>
+            <form action="/signup" method="post" class="space-y-4">
+                <div>
+                    <input class="w-full px-4 py-2 bg-transparent border-2 border-yellow-400 rounded-md text-white placeholder-gray-300 focus:ring-2 focus:ring-yellow-300 focus:outline-none" type="text" name="name" id="name" placeholder="Enter Name" required>
+                </div>
+                <div>
+                    <label for="gender" class="block text-yellow-300 mb-1">Choose Gender</label>
+                    <select name="gender" id="gender" class="w-full px-4 py-2 bg-transparent border-2 border-yellow-400 rounded-md text-white focus:ring-2 focus:ring-yellow-300 focus:outline-none">
+                        <option value="male" class="text-black">Male</option>
+                        <option value="female" class="text-black">Female</option>
+                        <option value="others" class="text-black">Others</option>
+                    </select>
+                </div>
+                <div>
+                    <input class="w-full px-4 py-2 bg-transparent border-2 border-yellow-400 rounded-md text-white placeholder-gray-300 focus:ring-2 focus:ring-yellow-300 focus:outline-none" type="email" name="email" id="email" placeholder="xyz@gmail.com" required>
+                </div>
+                <div>
+                    <input class="w-full px-4 py-2 bg-transparent border-2 border-yellow-400 rounded-md text-white placeholder-gray-300 focus:ring-2 focus:ring-yellow-300 focus:outline-none" type="password" name="password" id="password" placeholder="Password" required>
+                </div>
+                <div class="text-center">
+                    <input class="w-full bg-yellow-400 text-black font-bold py-2 px-4 rounded-md cursor-pointer hover:bg-yellow-500 transition" type="submit" value="Sign Up">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

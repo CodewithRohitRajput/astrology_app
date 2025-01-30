@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astrology Insights</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-image: url('/images/bg_astro2.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 350px;
+      height: 400px;
+      margin: auto;
+    }
+    .card img {
+      margin: auto;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .card h2 {
+      color: wheat;
+      margin: 10px 0;
+      font-size: 1.5em;
+    }
+    .card p {
+      color: white;
+      margin-bottom: 20px;
+    }
+    .card button a {
+      text-decoration: none;
+      color: white;
+    }
+    .card button {
+      background: #007BFF;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    .card button:hover {
+      background: #0056b3;
+    }
+    .rotating-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('/images/new_circle.png') no-repeat center;
+      background-size: contain;
+      opacity: 0.3;
+      animation: rotateClockwise 60s linear infinite;
+      z-index: -1;
+    }
+    @keyframes rotateClockwise {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      font-size: 2rem;
+      color: #ff0000;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .text-container {
+      position: relative;
+      background-color: #f3f4f6;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 800px;
+      margin: 20px auto;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-r from-purple-900 via-indigo-800 to-blue-900 min-h-screen flex flex-col">
+  <div class="rotating-bg"></div>
+  <nav class="bg-purple-800 bg-opacity-90 text-white shadow-lg">
+    <div class="container mx-auto p-4 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="/images/mainLogo.png" alt="Astrology Logo" class="w-10 h-10 rounded-full">
+        <a href="#" class="text-2xl font-bold">Astrology Insights</a>
+      </div>
+      <ul class="flex space-x-6">
+        <li><a href="/admin" class="hover:text-yellow-300">Admin Panel</a></li>
+        <li><a href="/horoscope" class="hover:text-yellow-300">Daily Horoscope</a></li>
+        <li><a href="#about" class="hover:text-yellow-300">About</a></li>
+        <li><a href="#contact" class="hover:text-yellow-300">Contact</a></li>
+        <li class="px-3 py-2 bg-sky-500 rounded-md text-sm text-black" ><a href="/signup" class="hover:text-yellow-300 text-decoration-none">Sign up</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <div class="container mx-auto p-6 text-center text-white flex-grow">
+    <header class="mb-8">
+      <h1 class="text-5xl font-extrabold">Astrology Insights</h1>
+      <p class="text-xl mt-4">Unlock the mysteries of the stars and discover your destiny</p>
+    </header>
+  </div>
+
+  <!-- Enhanced "Meet our Astrologer" Section with Close Button inside -->
+  <div id="astrologer-section" class="text-center w-full px-6 py-12 bg-gradient-to-b from-indigo-800 to-purple-900 opacity-75 text-white">
+    <!-- Close button inside the section -->
+    <button class="close-btn mt-40" onclick="closeSection()">×</button>
+    <h2 class="text-3xl md:text-4xl font-extrabold text-yellow-300 mb-6">Meet Our Expert Astrologer</h2>
+    <p class="text-lg md:text-xl font-medium max-w-3xl mx-auto mb-8">
+      <strong class="text-yellow-300">Aniruddhacharya</strong> is a seasoned professional with over 20 years of experience in guiding individuals through the intricate paths of their lives. Specializing in Vedic astrology and tarot readings, he helps you uncover the mysteries of your past, present, and future. With his compassionate approach and deep knowledge, Aniruddhacharya offers clarity, understanding, and profound insights into the challenges you face. Book a session today to receive personalized guidance from one of the most trusted astrologers in the field.
+    </p>
+    <div class="max-w-md mx-auto">
+      <a href="/appointment" class="bg-yellow-500 text-purple-800 hover:bg-yellow-400 py-3 px-8 rounded-full font-semibold text-lg transition duration-300 ease-in-out">
+        Book a Session Now
+      </a>
+    </div>
+  </div>
+
+  <br><br>
+
+  <div class="card bg-purple-800">
+    <img src="https://images.javatpoint.com/biography/images/aniruddhacharya-ji3.png" alt="Guru Zi">
+    <h2>Aniruddhacharya</h2>
+    <p>Experience: 5+ years in Astrology</p>
+    <button><a href="/appointment">Book Now</a></button>
+  </div>
+  
+  <footer id="footer" class="bg-purple-800 bg-opacity-90 text-white text-center p-6 mt-12">
+    <div class="container mx-auto">
+      <p class="text-lg font-semibold">Stay connected with the stars</p>
+      <div class="mt-4 flex justify-center space-x-6">
+        <a href="#" class="hover:text-yellow-300">Privacy Policy</a>
+        <a href="#" class="hover:text-yellow-300">Terms of Service</a>
+        <a href="#" class="hover:text-yellow-300">Contact Us</a>
+      </div>
+      <p class="mt-4 text-sm">© 2025 Astrology Insights. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function closeSection() {
+      document.getElementById('astrologer-section').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

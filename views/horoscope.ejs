@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astrology Insights</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-image: url('/images/bg_astro2.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+    }
+    .rotating-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('/images/new_circle.png') no-repeat center;
+      background-size: contain;
+      opacity: 0.3;
+      animation: rotateClockwise 60s linear infinite;
+      z-index: -1;
+    }
+    @keyframes rotateClockwise {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 350px;
+      margin: 10px;
+      backdrop-filter: blur(10px);
+    }
+    .card img {
+      margin: auto;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .card h3 {
+      color: #ffcc00;
+      margin: 10px 0;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    .card p {
+      color: white;
+      margin-bottom: 10px;
+      min-height: 80px;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-r from-purple-900 via-indigo-800 to-blue-900 min-h-screen flex flex-col">
+  <div class="rotating-bg"></div>
+  <nav class="bg-purple-800 bg-opacity-90 text-white shadow-lg w-full p-4 fixed top-0 left-0 z-10 flex justify-between items-center">
+    <a href="/" class="text-lg font-bold text-yellow-300">Go Back to Home</a>
+  </nav>
+  <div id="horoscope-section" class="bg-purple-800 p-8 text-white mt-16 rounded-lg">
+    <h2 class="text-3xl font-bold mb-4 text-center">Daily Horoscope</h2>
+    <div class="flex flex-wrap justify-center" id="horoscope-content">
+    </div>
+  </div>
+
+  <script>
+    const zodiacSigns = [
+      'aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 
+      'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces'
+    ];
+
+    async function fetchHoroscope(sign) {
+        try {
+            const response = await fetch(`/api/horoscope?sign=${sign}`);
+            if (!response.ok) {
+                throw new Error(`API error: ${response.status}`);
+            }
+
+            const data = await response.json();
+            console.log(`API response for ${sign}:`, data);
+
+            return data?.data?.horoscope_data ?? "No horoscope available.";
+        } catch (error) {
+            console.error("Error fetching horoscope:", error);
+            return "Error fetching horoscope.";
+        }
+    }
+
+    async function loadHoroscopes() {
+        const horoscopeContent = document.getElementById('horoscope-content');
+        horoscopeContent.innerHTML = '';
+
+        for (const sign of zodiacSigns) {
+            const horoscopeText = await fetchHoroscope(sign);
+            const card = document.createElement('div');
+            card.classList.add('card', 'm-4', 'bg-gradient-to-b', 'from-blue-500', 'to-purple-500', 'text-white');
+
+            card.innerHTML = `
+                <img src="/images/${sign}.png" alt="${sign} icon" onerror="setFallback(this)">
+                <h3 class="text-xl text-yellow-300">${capitalizeFirstLetter(sign)}</h3>
+                <p class="text-sm">${horoscopeText}</p>
+            `;
+
+            horoscopeContent.appendChild(card);
+        }
+    }
+
+    function setFallback(img) {
+        if (!img.dataset.fallback) {
+            img.dataset.fallback = "true";
+            img.src = "https://via.placeholder.com/100";
+        }
+    }
+
+    function capitalizeFirstLetter(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    document.addEventListener("DOMContentLoaded", loadHoroscopes);
+  </script>
+</body>
+</html>
