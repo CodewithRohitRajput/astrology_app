@@ -101,6 +101,8 @@
     }
     .services_name{
       height: 400px;
+      
+     
      
       
     }
@@ -138,128 +140,192 @@
   
   <div class="container mx-auto p-6 text-center text-white flex-grow">
     <header class="mb-8">
-      <h1 class="text-5xl font-extrabold">Astrology Insights</h1>
-      <p class="text-xl mt-4">Unlock the mysteries of the stars and discover your destiny</p>
+        <h1 class="text-5xl font-extrabold text-gradient bg-clip-text bg-gradient-to-r from-yellow-400 to-pink-600">
+            Astrology Insights
+        </h1>
+        <p class="text-2xl mt-4 font-semibold text-yellow-300">
+            Unlock the mysteries of the stars and discover your destiny
+        </p>
+        <p class="flex justify-center mt-8">
+            <ul class="flex text-3xl font-bold text-yellow-500 space-x-10 justify-center">
+                <li class="transform hover:scale-105 transition-transform duration-300">95% CUSTOMER SATISFACTION</li>
+                <li class="transform hover:scale-105 transition-transform duration-300">LIVE SESSIONS</li>
+                <li class="transform hover:scale-105 transition-transform duration-300">KNOW YOUR FUTURE</li>
+            </ul>
+        </p>
     </header>
-  </div>
-
-   <!-- making three box for user to read in short about this website-->
-    <div class="boxes flex">
-      <div class="box_1 h-40 w-1/4 border-2 border-yellow-500 bg-transparent m-auto rounded-lg ">
-        <p class="text-2xl px-20 mt-4 text-yellow-500 flex justify-center">Flexible Timings</p>
-        <p class="text-xl mt-10 ml-3 text-white">You can select your timing and consult to the astrologer</p>
-      </div>
-      <div class="box_1 h-40 w-1/4 border-2 border-yellow-500 bg-transparent m-auto rounded-lg ">
-        <p class="text-2xl px-20 mt-4 text-yellow-500 flex justify-center">Experts Astrologer</p>
-        <p class="text-xl mt-10 ml-3 text-white">We have an astrologer who has an experience of 20+ years</p>
-      </div>
-      <div class="box_1 h-40 w-1/4 border-2 border-yellow-500 bg-transparent m-auto  rounded-lg">
-        <p class="text-2xl px-20 mt-4 text-yellow-500 flex justify-center">Find solutions</p>
-        <p class="text-xl mt-10 ml-3 text-white">You can find solution of every problem from our astrologer</p>
-      </div>
-    </div>
-
-
-  <!-- Enhanced "Meet our Astrologer" Section with Close Button inside -->
-  <div id="astrologer-section" class="mt-5 text-center w-full px-6 py-12 bg-gradient-to-b from-indigo-800 to-purple-900 opacity-75 text-white">
-    <!-- Close button inside the section -->
-    <button class="close-btn mt-40" onclick="closeSection()">×</button>
-    <h2 class="text-3xl md:text-4xl font-extrabold text-yellow-300 mb-6">Meet Our Expert Astrologer</h2>
-    <p class="text-lg md:text-xl font-medium max-w-3xl mx-auto mb-8">
-      <strong class="text-yellow-300">Aniruddhacharya</strong> is a seasoned professional with over 20 years of experience in guiding individuals through the intricate paths of their lives. Specializing in Vedic astrology and tarot readings, he helps you uncover the mysteries of your past, present, and future. With his compassionate approach and deep knowledge, Aniruddhacharya offers clarity, understanding, and profound insights into the challenges you face. Book a session today to receive personalized guidance from one of the most trusted astrologers in the field.
-    </p>
-    <div class="max-w-md mx-auto">
-      <a href="/appointment" class="bg-yellow-500 text-purple-800 hover:bg-yellow-400 py-3 px-8 rounded-full font-semibold text-lg transition duration-300 ease-in-out">
-        Book a Session Now
-      </a>
-    </div>
-  </div>
-
-<br><br>
-<!-- Complementary services added open div to see -->
-
-<div class="services_div w-full bg-gradient-to-r  ">
-  <div class="flex justify-center ">
-    <p class="text-4xl mt-2  text-black ">COMPLEMENTARY ASTROLOGY SERVICES</p>
-
-  </div>
-
-  <div class="comp_services flex gap-4 mt-12">
-    <div class="services_name ml-5 bg-white w-1/5 border-b-8 border-yellow-500 rounded-md ">
-      <div class="pt-5 flex justify-center">
-        <img class="img_f   " src="/images/4th.png" alt="festival">
-      </div>
-      <p class="text-3xl mt-5 flex text-yellow-500 justify-center">Festival 2025</p>
-      <p class="text-black text-xl mt-5">Festivals are myraid celebrations , each a unique form of joy. Explore the diverse world of festivites - a realm of celebration</p>
-      <div class="read_more mt-4 ml-2 flex justify-center ">
-        <button><a class="px-3 py-2 rounded-md border-2 border-indigo-500 bg-yellow-500" href=""> Read more</a></button>
-      </div>
-    </div>
-    <div class="services_name ml-5 bg-white w-1/5 border-b-8 border-yellow-500 rounded-md ">
-      <div class="pt-5 flex justify-center">
-        <img class="img_f   " src="/images/4th.png" alt="festival">
-      </div>
-      <p class="text-3xl mt-5 flex text-yellow-500 justify-center">Panchang </p>
-      <p class="text-black text-xl mt-5">Festivals are myraid celebrations , each a unique form of joy. Explore the diverse world of festivites - a realm of celebration</p>
-      <div class="read_more mt-4 ml-2 flex justify-center ">
-        <button><a class="px-3 py-2 rounded-md border-2 border-indigo-500 bg-yellow-500" href=""> Read more</a></button>
-      </div>
-    </div>
-    <div class="services_name ml-5 bg-white w-1/5 border-b-8 border-yellow-500 rounded-md ">
-      <div class="pt-5 flex justify-center">
-        <img class="img_f   " src="/images/4th.png" alt="festival">
-      </div>
-      <p class="text-3xl mt-5 flex text-yellow-500 justify-center">Kundli </p>
-      <p class="text-black text-xl mt-5">Festivals are myraid celebrations , each a unique form of joy. Explore the diverse world of festivites - a realm of celebration</p>
-      <div class="read_more mt-4 ml-2 flex justify-center ">
-        <button><a class="px-3 py-2 rounded-md border-2 border-indigo-500 bg-yellow-500" href=""> Read more</a></button>
-      </div>
-    </div>
-    <div class="services_name ml-5 bg-white w-1/5 border-b-8 border-yellow-500 rounded-md ">
-      <div class="pt-5 flex justify-center">
-        <img class="img_f   " src="/images/4th.png" alt="festival">
-      </div>
-      <p class="text-3xl mt-5 flex text-yellow-500 justify-center">Today Panchang</p>
-      <p class="text-black text-xl mt-5">Festivals are myraid celebrations , each a unique form of joy. Explore the diverse world of festivites - a realm of celebration</p>
-      <div class="read_more mt-4 ml-2 flex justify-center ">
-        <button><a class="px-3 py-2 rounded-md border-2 border-indigo-500 bg-yellow-500" href=""> Read more</a></button>
-      </div>
-    </div>
-    <div class="services_name ml-5 bg-white w-1/5 border-b-8 border-yellow-500 rounded-md ">
-      <div class="pt-5 flex justify-center">
-        <img class="img_f   " src="/images/4th.png" alt="festival">
-      </div>
-      <p class="text-3xl mt-5 flex text-yellow-500 justify-center">Today's Horoscope</p>
-      <p class="text-black text-xl mt-5">Festivals are myraid celebrations , each a unique form of joy. Explore the diverse world of festivites - a realm of celebration</p>
-      <div class="read_more mt-4 ml-2 flex justify-center ">
-        <button><a class="px-3 py-2 rounded-md border-2 border-indigo-500 bg-yellow-500" href=""> Read more</a></button>
-      </div>
-    </div>
-    
-   
-  </div>
 </div>
 
 
 
 
 
-  <br><br>
 
-  <div class="card bg-purple-800">
+
+<!-- Enhanced "Meet our Astrologer" Section with Close Button inside -->
+<div id="astrologer-section" class="mt-0 text-center w-full px-6 py-12 bg-gradient-to-b from-indigo-800 to-purple-900 opacity-75 text-white">
+  <!-- Close button inside the section -->
+  <button class="close-btn mt-40" onclick="closeSection()"></button>
+  <h2 class="text-3xl md:text-4xl font-extrabold text-yellow-300 mb-6">Meet Our Expert Astrologer</h2>
+  <p class="text-lg md:text-xl font-medium max-w-3xl mx-auto mb-8">
+    <strong class="text-yellow-300">Aniruddhacharya</strong> is a seasoned professional with over 20 years of experience in guiding individuals through the intricate paths of their lives. Specializing in Vedic astrology and tarot readings, he helps you uncover the mysteries of your past, present, and future. With his compassionate approach and deep knowledge, Aniruddhacharya offers clarity, understanding, and profound insights into the challenges you face. Book a session today to receive personalized guidance from one of the most trusted astrologers in the field.
+  </p>
+  <div class="max-w-md mx-auto">
+    <a href="/appointment" class="bg-yellow-500 text-purple-800 hover:bg-yellow-400 py-3 px-8 rounded-full font-semibold text-lg transition duration-300 ease-in-out">
+      Book a Session Now
+    </a>
+  </div>
+</div>
+
+
+  <br>
+  
+  <div class="card bg-gradient-to-b ">
     <img src="https://images.javatpoint.com/biography/images/aniruddhacharya-ji3.png" alt="Guru Zi">
     <h2>Aniruddhacharya</h2>
     <p>Experience: 5+ years in Astrology</p>
     <button><a href="/appointment">Book Now</a></button>
   </div>
+  <br><br>
+  <!-- Complementary services added open div to see -->
   
-  <footer id="footer" class="bg-purple-800 bg-opacity-90 text-white text-center p-6 mt-12">
+  <div class="services_div w-full bg-gradient-to-r p-8">
+    <div class="flex justify-center mb-10">
+      <p class="text-4xl mt-2 text-yellow-500">COMPLEMENTARY ASTROLOGY SERVICES</p>
+    </div>
+    
+    <div class="comp_services grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 mt-12">
+      <!-- Service 1 -->
+      <div class="services_name bg-white border-b-8 border-yellow-500 rounded-md bg-gradient-to-b transform hover:scale-105 transition-all duration-300 ease-in-out shadow-lg">
+        <div class="pt-5 flex justify-center">
+          <img class="img_f" src="/images/4th.png" alt="Festival">
+        </div>
+        <p class="text-3xl mt-5 text-yellow-500 text-center">Festival 2025</p>
+        <p class="text-black text-xl mt-5 px-4 text-center">Festivals are myriad celebrations, each a unique form of joy. Explore the diverse world of festivities - a realm of celebration.</p>
+        <div class="read_more mt-4 ml-2 flex justify-center">
+          <button><a class="px-4 py-2 rounded-md border-2 border-indigo-500 bg-yellow-500 hover:bg-indigo-500 transition-all" href="/festivals">Read more</a></button>
+        </div>
+      </div>
+  
+      <!-- Service 2 -->
+      <div class="services_name bg-white border-b-8 border-yellow-500 rounded-md bg-gradient-to-b transform hover:scale-105 transition-all duration-300 ease-in-out shadow-lg">
+        <div class="pt-5 flex justify-center">
+          <img class="img_f" src="/images/4th.png" alt="Panchang">
+        </div>
+        <p class="text-3xl mt-5 text-yellow-500 text-center">Panchang</p>
+        <p class="text-black text-xl mt-5 px-4 text-center">Festivals are myriad celebrations, each a unique form of joy. Explore the diverse world of festivities - a realm of celebration.</p>
+        <div class="read_more mt-4 ml-2 flex justify-center">
+          <button><a class="px-4 py-2 rounded-md border-2 border-indigo-500 bg-yellow-500 hover:bg-indigo-500 transition-all" href="/panchang">Read more</a></button>
+        </div>
+      </div>
+  
+      <!-- Service 3 -->
+      <div class="services_name bg-white border-b-8 border-yellow-500 rounded-md bg-gradient-to-b transform hover:scale-105 transition-all duration-300 ease-in-out shadow-lg">
+        <div class="pt-5 flex justify-center">
+          <img class="img_f" src="/images/4th.png" alt="Kundli">
+        </div>
+        <p class="text-3xl mt-5 text-yellow-500 text-center">Kundli</p>
+        <p class="text-black text-xl mt-5 px-4 text-center">Festivals are myriad celebrations, each a unique form of joy. Explore the diverse world of festivities - a realm of celebration.</p>
+        <div class="read_more mt-4 ml-2 flex justify-center">
+          <button><a class="px-4 py-2 rounded-md border-2 border-indigo-500 bg-yellow-500 hover:bg-indigo-500 transition-all" href="#">Read more</a></button>
+        </div>
+      </div>
+  
+      <!-- Service 4 -->
+      <div class="services_name bg-white border-b-8 border-yellow-500 rounded-md bg-gradient-to-b transform hover:scale-105 transition-all duration-300 ease-in-out shadow-lg">
+        <div class="pt-5 flex justify-center">
+          <img class="img_f" src="/images/4th.png" alt="Today Panchang">
+        </div>
+        <p class="text-3xl mt-5 text-yellow-500 text-center">Today Panchang</p>
+        <p class="text-black text-xl mt-5 px-4 text-center">Festivals are myriad celebrations, each a unique form of joy. Explore the diverse world of festivities - a realm of celebration.</p>
+        <div class="read_more mt-4 ml-2 flex justify-center">
+          <button><a class="px-4 py-2 rounded-md border-2 border-indigo-500 bg-yellow-500 hover:bg-indigo-500 transition-all" href="#">Read more</a></button>
+        </div>
+      </div>
+  
+      <!-- Service 5 -->
+      <div class="services_name bg-white border-b-8 border-yellow-500 rounded-md bg-gradient-to-b transform hover:scale-105 transition-all duration-300 ease-in-out shadow-lg">
+        <div class="pt-5 flex justify-center">
+          <img class="img_f" src="/images/4th.png" alt="Today's Horoscope">
+        </div>
+        <p class="text-3xl mt-5 text-yellow-500 text-center">Today's Horoscope</p>
+        <p class="text-black text-xl mt-5 px-4 text-center">Festivals are myriad celebrations, each a unique form of joy. Explore the diverse world of festivities - a realm of celebration.</p>
+        <div class="read_more mt-4 ml-2 flex justify-center">
+          <button><a class="px-4 py-2 rounded-md border-2 border-indigo-500 bg-yellow-500 hover:bg-indigo-500 transition-all" href="/horoscope">Read more</a></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <div id="offer-popup" class="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 flex justify-center items-center z-50 hidden">
+    <div class="bg-white p-6 rounded-lg max-w-sm">
+        <h3 class="text-xl font-bold mb-4">Special Offer</h3>
+        <p class="text-lg mb-6">Book a session today and get 20% off your first astrology reading!</p>
+        <a href="/appointment" class="bg-yellow-500 text-purple-800 py-2 px-6 rounded-full">Claim Offer</a>
+        <button onclick="document.getElementById('offer-popup').style.display = 'none'" class="absolute top-2 right-2 text-xl text-red-500">×</button>
+    </div>
+</div>
+<script>
+  setTimeout(function() {
+    document.getElementById('offer-popup').style.display = 'flex';
+  }, 5000); // Display after 5 seconds
+</script>
+
+
+
+
+<div class="container mx-auto text-center mt-12 ">
+  <h2 class="text-4xl font-semibold text-yellow-500 mb-10">What Our Clients Say</h2>
+  <div class="flex justify-center gap-10">
+      <!-- Testimonial 1 -->
+      <div class="bg-white p-8 rounded-lg shadow-xl max-w-md transform hover:scale-105 transition-all duration-300 ease-in-out  bg-azure">
+          <div class="flex justify-center mb-6">
+              <img  src="/images/4th.png" alt="Client 1" class="rounded-full h-32 w-32 border-4 border-yellow-500">
+          </div>
+          <blockquote class="text-lg font-medium text-gray-800 italic">
+              "Aniruddhacharya gave me the clarity I needed in my life. His insights helped me make important decisions."
+          </blockquote>
+          <p class="mt-4 font-bold text-yellow-500">- Jane Doe</p>
+          <p class="text-sm text-gray-600">Life Coach</p>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="bg-white p-8 rounded-lg shadow-xl max-w-md transform hover:scale-105 transition-all duration-300 ease-in-out  bg-azure">
+          <div class="flex justify-center mb-6">
+            <img  src="/images/4th.png" alt="Client 1" class="rounded-full h-32 w-32 border-4 border-yellow-500">
+          </div>
+          <blockquote class="text-lg font-medium text-gray-800 italic ">
+              "The session was incredibly insightful and helped me understand my future better!"
+          </blockquote>
+          <p class="mt-4 font-bold text-yellow-500">- John Smith</p>
+          <p class="text-sm text-gray-600">Entrepreneur</p>
+      </div>
+  </div>
+</div>
+
+
+
+  <footer class="bg-purple-800 text-white text-center p-6 mt-12">
     <div class="container mx-auto">
       <p class="text-lg font-semibold">Stay connected with the stars</p>
       <div class="mt-4 flex justify-center space-x-6">
         <a href="#" class="hover:text-yellow-300">Privacy Policy</a>
         <a href="#" class="hover:text-yellow-300">Terms of Service</a>
         <a href="#" class="hover:text-yellow-300">Contact Us</a>
+      </div>
+      <!-- social media-->
+<div class="flex justify-center space-x-6 mt-8">
+  <a href="#" class="text-2xl text-yellow-500 hover:text-yellow-300"><i class="fab fa-facebook">Fb</i></a>
+  <a href="#" class="text-2xl text-yellow-500 hover:text-yellow-300"><i class="fab fa-twitter">X</i></a>
+  <a href="#" class="text-2xl text-yellow-500 hover:text-yellow-300"><i class="fab fa-instagram">Insta</i></a>
+</div>
+<!-- Clien
+      <div class="mt-4 text-sm">
+        <p>Email: contact@astrologyinsights.com</p>
+        <p>Phone: +1 234 567 890</p>
+        <p>Address: 123 Cosmic Lane, Star City, Universe</p>
       </div>
       <p class="mt-4 text-sm">© 2025 Astrology Insights. All rights reserved.</p>
     </div>

@@ -114,9 +114,15 @@ app.get('/api/horoscope', async (req, res) => {
     }
 });
 
+// Panchang calculator : 
 
+app.get('/panchang',(req,res)=>{
+    res.render('panchang');
+})
 
-
+app.get('/festivals',(req,res)=>{
+    res.render('festivals');
+})
 
 
 // New route to show user details after submission

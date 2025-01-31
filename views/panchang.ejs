@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panchang Astrology</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-image: url('https://source.unsplash.com/1600x900/?universe,astrology');
+            background-size: cover;
+            background-position: center;
+            backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 bg-opacity-50 flex justify-center items-center min-h-screen text-white">
+    <div class="bg-gray-800 p-6 rounded-lg shadow-2xl w-full max-w-md border border-yellow-400">
+        <h2 class="text-2xl font-semibold text-center mb-4 text-yellow-300">Panchang Astrology</h2>
+        <p class="text-center text-sm text-yellow-200 mb-4">Discover the cosmic influence of the universe</p>
+        <form id="panchangForm" class="space-y-4">
+            <label class="block">
+                <span class="text-yellow-300">Date</span>
+                <input type="date" id="date" class="mt-1 block w-full p-2 border rounded-lg bg-gray-700 text-white">
+            </label>
+            <label class="block">
+                <span class="text-yellow-300">Time</span>
+                <input type="time" id="time" class="mt-1 block w-full p-2 border rounded-lg bg-gray-700 text-white">
+            </label>
+            <label class="block">
+                <span class="text-yellow-300">Location</span>
+                <input type="text" id="location" placeholder="Enter location" class="mt-1 block w-full p-2 border rounded-lg bg-gray-700 text-white">
+            </label>
+            <button type="button" onclick="fetchPanchang()" class="w-full bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-2 rounded-lg transition">Get Panchang</button>
+        </form>
+        <div id="panchangResult" class="mt-4 p-4 bg-gray-700 rounded-lg hidden border border-yellow-300">
+            <h3 class="text-lg font-semibold text-yellow-300">Panchang Details</h3>
+            <pre id="resultText" class="text-yellow-200 mt-2 whitespace-pre-wrap"></pre>
+        </div>
+    </div>
+
+    <script>
+        async function fetchPanchang() {
+            const dateInput = document.getElementById('date').value;
+            const timeInput = document.getElementById('time').value;
+            const locationInput = document.getElementById('location').value;
+
+            if (!dateInput || !timeInput || !locationInput) {
+                alert('Please fill all fields');
+                return;
+            }
+
+            try {
+                // Convert date and time to individual components
+                const [year, month, day] = dateInput.split('-').map(Number);
+                const [hour, minute] = timeInput.split(':').map(Number);
+
+                // Get latitude and longitude for the location
+                const geocodeResponse = await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(locationInput)}&format=json&limit=1`);
+                const geocodeData = await geocodeResponse.json();
+
+                if (geocodeData.length === 0) {
+                    alert('Location not found');
+                    return;
+                }
+
+                const { lat, lon } = geocodeData[0];
+
+                // Panchang API Payload
+                const payload = {
+                    day,
+                    month,
+                    year,
+                    hour,
+                    min: minute,
+                    lat: parseFloat(lat),
+                    lon: parseFloat(lon),
+                    tzone: 5.5 // Adjust timezone as needed
+                };
+
+                // Call the Panchang API
+                const response = await fetch('https://json.astrologyapi.com/v1/basic_panchang', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': 'Basic ' + btoa('your_user_id:your_api_key'), // Replace with valid credentials
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API Error: ${response.statusText}`);
+                }
+
+                const data = await response.json();
+
+                // Debugging: Log full API response
+                console.log('API Response:', data);
+
+                if (!data || Object.keys(data).length === 0) {
+                    throw new Error('Invalid API response or empty data.');
+                }
+
+                // Display Panchang details
+                const resultText = `
+📅 Day: ${data.day || 'N/A'}
+🌑 Tithi: ${data.tithi?.details?.tithi_name || 'N/A'}
+⭐ Nakshatra: ${data.nakshatra?.details?.nak_name || 'N/A'}
+🧘 Yoga: ${data.yoga?.details?.yoga_name || 'N/A'}
+🌍 Karana: ${data.karana?.details?.karana_name || 'N/A'}
+🌅 Sunrise: ${data.sunrise || 'N/A'}
+🌇 Sunset: ${data.sunset || 'N/A'}
+                `;
+
+                document.getElementById('resultText').innerText = resultText;
+                document.getElementById('panchangResult').classList.remove('hidden');
+
+            } catch (error) {
+                console.error('Error fetching Panchang:', error);
+                document.getElementById('resultText').innerText = `Error: ${error.message}`;
+                document.getElementById('panchangResult').classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
