@@ -18,14 +18,14 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       text-align: center;
       width: 350px;
-      height: 400px;
+      height: 500px;
       margin: auto;
     }
     .card img {
       margin: auto;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
+      width: 100%;
+      height: 70%;
+     
       object-fit: cover;
     }
     .card h2 {
@@ -83,6 +83,7 @@
       color: #ff0000;
       cursor: pointer;
       z-index: 2;
+      transform: translateY(250px);
     }
     .text-container {
       position: relative;
@@ -94,6 +95,27 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       font-size: 1.2rem;
     }
+    .box_1{
+      background: url('/images/bg_boxes.jpeg') no-repeat center;
+      opacity: 0.75;
+    }
+    .services_name{
+      height: 400px;
+     
+      
+    }
+    .img_f{
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      
+    }
+    .services_div{
+      height: 600px;
+      background-color: bisque;
+    }
+    
   </style>
 </head>
 <body class="bg-gradient-to-r from-purple-900 via-indigo-800 to-blue-900 min-h-screen flex flex-col">
@@ -121,8 +143,25 @@
     </header>
   </div>
 
+   <!-- making three box for user to read in short about this website-->
+    <div class="boxes flex">
+      <div class="box_1 h-40 w-1/4 border-2 border-yellow-500 bg-transparent m-auto rounded-lg ">
+        <p class="text-2xl px-20 mt-4 text-yellow-500 flex justify-center">Flexible Timings</p>
+        <p class="text-xl mt-10 ml-3 text-white">You can select your timing and consult to the astrologer</p>
+      </div>
+      <div class="box_1 h-40 w-1/4 border-2 border-yellow-500 bg-transparent m-auto rounded-lg ">
+        <p class="text-2xl px-20 mt-4 text-yellow-500 flex justify-center">Experts Astrologer</p>
+        <p class="text-xl mt-10 ml-3 text-white">We have an astrologer who has an experience of 20+ years</p>
+      </div>
+      <div class="box_1 h-40 w-1/4 border-2 border-yellow-500 bg-transparent m-auto  rounded-lg">
+        <p class="text-2xl px-20 mt-4 text-yellow-500 flex justify-center">Find solutions</p>
+        <p class="text-xl mt-10 ml-3 text-white">You can find solution of every problem from our astrologer</p>
+      </div>
+    </div>
+
+
   <!-- Enhanced "Meet our Astrologer" Section with Close Button inside -->
-  <div id="astrologer-section" class="text-center w-full px-6 py-12 bg-gradient-to-b from-indigo-800 to-purple-900 opacity-75 text-white">
+  <div id="astrologer-section" class="mt-5 text-center w-full px-6 py-12 bg-gradient-to-b from-indigo-800 to-purple-900 opacity-75 text-white">
     <!-- Close button inside the section -->
     <button class="close-btn mt-40" onclick="closeSection()">×</button>
     <h2 class="text-3xl md:text-4xl font-extrabold text-yellow-300 mb-6">Meet Our Expert Astrologer</h2>
@@ -135,6 +174,74 @@
       </a>
     </div>
   </div>
+
+<br><br>
+
+<div class="services_div w-full ">
+  <div class="flex justify-center ">
+    <p class="text-4xl mt-2  text-black ">COMPLEMENTARY ASTROLOGY SERVICES</p>
+
+  </div>
+
+  <div class="comp_services flex gap-4 mt-12">
+    <div class="services_name ml-5 bg-white w-1/5 border-b-8 border-yellow-500 rounded-md ">
+      <div class="pt-5 flex justify-center">
+        <img class="img_f   " src="/images/4th.png" alt="festival">
+      </div>
+      <p class="text-3xl mt-5 flex text-yellow-500 justify-center">Festival 2025</p>
+      <p class="text-black text-xl mt-5">Festivals are myraid celebrations , each a unique form of joy. Explore the diverse world of festivites - a realm of celebration</p>
+      <div class="read_more mt-4 ml-2 flex justify-center ">
+        <button><a class="px-3 py-2 rounded-md border-2 border-indigo-500 bg-yellow-500" href=""> Read more</a></button>
+      </div>
+    </div>
+    <div class="services_name ml-5 bg-white w-1/5 border-b-8 border-yellow-500 rounded-md ">
+      <div class="pt-5 flex justify-center">
+        <img class="img_f   " src="/images/4th.png" alt="festival">
+      </div>
+      <p class="text-3xl mt-5 flex text-yellow-500 justify-center">Panchang </p>
+      <p class="text-black text-xl mt-5">Festivals are myraid celebrations , each a unique form of joy. Explore the diverse world of festivites - a realm of celebration</p>
+      <div class="read_more mt-4 ml-2 flex justify-center ">
+        <button><a class="px-3 py-2 rounded-md border-2 border-indigo-500 bg-yellow-500" href=""> Read more</a></button>
+      </div>
+    </div>
+    <div class="services_name ml-5 bg-white w-1/5 border-b-8 border-yellow-500 rounded-md ">
+      <div class="pt-5 flex justify-center">
+        <img class="img_f   " src="/images/4th.png" alt="festival">
+      </div>
+      <p class="text-3xl mt-5 flex text-yellow-500 justify-center">Kundli </p>
+      <p class="text-black text-xl mt-5">Festivals are myraid celebrations , each a unique form of joy. Explore the diverse world of festivites - a realm of celebration</p>
+      <div class="read_more mt-4 ml-2 flex justify-center ">
+        <button><a class="px-3 py-2 rounded-md border-2 border-indigo-500 bg-yellow-500" href=""> Read more</a></button>
+      </div>
+    </div>
+    <div class="services_name ml-5 bg-white w-1/5 border-b-8 border-yellow-500 rounded-md ">
+      <div class="pt-5 flex justify-center">
+        <img class="img_f   " src="/images/4th.png" alt="festival">
+      </div>
+      <p class="text-3xl mt-5 flex text-yellow-500 justify-center">Today Panchang</p>
+      <p class="text-black text-xl mt-5">Festivals are myraid celebrations , each a unique form of joy. Explore the diverse world of festivites - a realm of celebration</p>
+      <div class="read_more mt-4 ml-2 flex justify-center ">
+        <button><a class="px-3 py-2 rounded-md border-2 border-indigo-500 bg-yellow-500" href=""> Read more</a></button>
+      </div>
+    </div>
+    <div class="services_name ml-5 bg-white w-1/5 border-b-8 border-yellow-500 rounded-md ">
+      <div class="pt-5 flex justify-center">
+        <img class="img_f   " src="/images/4th.png" alt="festival">
+      </div>
+      <p class="text-3xl mt-5 flex text-yellow-500 justify-center">Today's Horoscope</p>
+      <p class="text-black text-xl mt-5">Festivals are myraid celebrations , each a unique form of joy. Explore the diverse world of festivites - a realm of celebration</p>
+      <div class="read_more mt-4 ml-2 flex justify-center ">
+        <button><a class="px-3 py-2 rounded-md border-2 border-indigo-500 bg-yellow-500" href=""> Read more</a></button>
+      </div>
+    </div>
+    
+   
+  </div>
+</div>
+
+
+
+
 
   <br><br>
 
